@@ -67,7 +67,7 @@ public class ConsolidatedTemplate extends Printable {
         
         setTextWithPadding("orides");
         
-        if (! json.getString("mednam").isEmpty()) {
+        if (json.has("mednam") && ! json.getString("mednam").isEmpty()) {
             setText("Medico");
             setTextWithPadding("mednam");            
         }
