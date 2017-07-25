@@ -5,6 +5,7 @@
  */
 package pe.org.incn.templates.pharmacy;
 
+import com.sun.xml.internal.fastinfoset.tools.StAX2SAXReader;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -76,7 +77,7 @@ public class ConsolidatedTemplate extends Printable {
             separator("=");
             setText("TOTAL A PAGAR:");
             
-            pullRight(String.format("%.3f", json.getDouble("invppac")));
+            pullRight(Helper.formatMoney(json.getDouble("invppac")));
             nextLine();
             separator("=");
 
@@ -94,7 +95,7 @@ public class ConsolidatedTemplate extends Printable {
                 JSONObject product = products.getJSONObject(index);
                 
                 String cantidad = String.format("| %s", product.getString("qtypro"));
-                pullRight(String.format("%.3f", json.getDouble("invppac")));
+                pullRight(Helper.formatMoney(json.getDouble("invppac")));
                 String description = product.getString("despro").toLowerCase();
                 
                 setLeftText(description, 90);
@@ -103,7 +104,7 @@ public class ConsolidatedTemplate extends Printable {
             
             nextLine();
             
-            setRightText(String.format("Total: %.3f", json.getDouble("invppac")), 40);
+            setRightText("Total: ".concat(Helper.formatMoney(json.getDouble("invppac"))), 40);
      
             separator("-_");
         
