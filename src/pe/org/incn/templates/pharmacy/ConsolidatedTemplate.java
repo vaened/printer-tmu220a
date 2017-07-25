@@ -5,9 +5,6 @@
  */
 package pe.org.incn.templates.pharmacy;
 
-import com.sun.xml.internal.fastinfoset.tools.StAX2SAXReader;
-import java.util.ArrayList;
-import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import pe.org.incn.core.Helper;

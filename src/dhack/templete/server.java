@@ -5,11 +5,9 @@ import dhack.server.User;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -22,17 +20,9 @@ import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.print.ServiceUI;
 import javax.print.SimpleDoc;
-import javax.print.attribute.AttributeSet;
-import javax.print.attribute.HashAttributeSet;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.ColorSupported;
-import javax.print.attribute.standard.Copies;
-import javax.print.attribute.standard.MediaSizeName;
-import javax.print.attribute.standard.PrinterName;
-import javax.print.attribute.standard.Sides;
 import javax.swing.JOptionPane;
-import org.json.JSONArray;
 import org.json.JSONObject;
  
 /**
