@@ -1,5 +1,7 @@
 package pe.org.incn.core;
 
+import java.util.Locale;
+
 
 
 /*
@@ -34,4 +36,9 @@ public class Helper {
         );
      }
     
+    public static String formatMoney(double money)
+    {
+        return String.format(Locale.ROOT, "S/ %.3f", money);
+    }
+            
 }
