@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 import pe.gob.incn.modules.AppointmentModule;
+import pe.gob.incn.modules.CashboxModule;
 import pe.gob.incn.modules.Module;
 import pe.gob.incn.modules.PharmacyModule;
 
@@ -26,6 +27,7 @@ public class Modules {
         this.classes = new HashMap<>();
         this.classes.put("pharmacy", new PharmacyModule( json ));
         this.classes.put("appointment", new AppointmentModule( json ));
+        this.classes.put("cashbox", new CashboxModule( json ));
     }
     
     
