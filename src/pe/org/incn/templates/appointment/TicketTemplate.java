@@ -11,11 +11,12 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import pe.org.incn.core.Printable;
+
 /**
  *
  * @author efloresp
  */
-public class TicketTemplate extends Printable{
+public class TicketTemplate extends Printable {
 
     public TicketTemplate(JSONObject json) {
         super(json);
@@ -24,7 +25,6 @@ public class TicketTemplate extends Printable{
 
     @Override
     public Printable draw() {
-         
 
         JSONObject config = json.getJSONObject("config");
 
@@ -49,14 +49,12 @@ public class TicketTemplate extends Printable{
 
         boolean isMedico = "1".equals(json.getString("flag_his"));
 
-        int
-                lines = 29,
+        int lines = 29,
                 increase = 3;
 
         if (isMedico) {
             lines += 15;
         }
-
 
         row = center(config.getString("name").toUpperCase(), row);
 
@@ -95,21 +93,19 @@ public class TicketTemplate extends Printable{
 
         row = center(" DATOS DE LA CITA ", row);
 
-
-        if( ! Arrays.asList(new String[] {"CARD", "ENDO", "PAE1" }).contains(json.getString("sercod")) ) {
+        if (!Arrays.asList(new String[]{"CARD", "ENDO", "PAE1"}).contains(json.getString("sercod"))) {
             writeLine(
-                "Fecha: " + json.getString("date"), // line 1
-                "Hora: " + json.getString("time"), // line 2
-                row
+                    "Fecha: " + json.getString("date"), // line 1
+                    "Hora: " + json.getString("time"), // line 2
+                    row
             );
 
         } else {
             writeLine(
-                "Fecha: " + json.getString("date"),
-                row
-            );    
+                    "Fecha: " + json.getString("date"),
+                    row
+            );
         }
-        
 
         row++;
 
@@ -124,7 +120,7 @@ public class TicketTemplate extends Printable{
         row++;
 
         //        
-        printTextWrap(row, row, 1, width, "Medico");
+        printTextWrap(row, row, 1, width, isMedico ? "Medico" : "Profesional");
         row++;
         row = paddingLeft(json.getString("mednam"), row, 3);
 
@@ -132,12 +128,12 @@ public class TicketTemplate extends Printable{
         printTextWrap(row, row, 1, width, "Servicio");
         row++;
         row = paddingLeft(json.getString("serdes"), row, 3);
-        
+
         // 
         printTextWrap(row, row, 1, width, "Concepto");
         row++;
         row = paddingLeft(json.getString("tardes"), row, 3);
-        
+
         //
         printTextWrap(row, row, 1, width, "Consultorio" + " - " + json.getString("codcon"));
         row++;
@@ -168,7 +164,7 @@ public class TicketTemplate extends Printable{
         if (isMedico) {
             row++;
             printCharAtCol(row, 1, width, "-_");
-     
+
             center("Para Farmacia", row);
             row++;
 
@@ -200,7 +196,7 @@ public class TicketTemplate extends Printable{
                     row
             );
             row++;
-            
+
             /*
         if ( json.getString("pardes").equals("SIS")) { 
             row ++;
@@ -210,21 +206,19 @@ public class TicketTemplate extends Printable{
             );  
         }   
              */
-            
-
             //printCharAtCol(row, 1, width, "-");
             row = center(json.getString("username") + " - " + json.getString("citfca"), row);
-       
+
             row++;
-            
+
             printCharAtCol(row, 1, width, "-");
 
             row++;
-            
+
             center("Para Otros Examenes", row);
-            
+
             row++;
-     
+
             row = center(name, row);
 
             writeLine(
@@ -266,19 +260,15 @@ public class TicketTemplate extends Printable{
 
             //printCharAtCol(row, 1, width, "-");
             row = center(json.getString("username") + " - " + json.getString("citfca"), row);
-            
-            row ++;
-            row ++;
-            row ++;
-            row ++;
-            
-            
+
+            row++;
+            row++;
+            row++;
+            row++;
+
         }
 
-  
         return this;
     }
 
-
-    
 }
