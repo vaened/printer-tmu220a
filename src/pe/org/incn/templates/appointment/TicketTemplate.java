@@ -87,6 +87,7 @@ public class TicketTemplate extends Printable {
                 row
         );
 
+        
         row++;
         row++;
         printCharAtCol(row, 0, width, "=");
@@ -112,6 +113,13 @@ public class TicketTemplate extends Printable {
         writeLine(
                 "T.Pac: " + json.getString("tcides"), // line 1
                 "Prefactura: " + json.getString("prfnum"), // line 2
+                row
+        );
+
+        row++; //
+
+        writeLine(
+                "Secuencia: " + json.getString("invnum"), // line 1
                 row
         );
 
