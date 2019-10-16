@@ -143,7 +143,7 @@ public class TicketTemplate extends Printable {
         row = paddingLeft(json.getString("tardes"), row, 3);
 
         //
-        printTextWrap(row, row, 1, width, "Consultorio" + " - " + json.getString("codcon"));
+        printTextWrap(row, row, 1, width, "Consultorio");
         row++;
         row = paddingLeft(json.getString("descon"), row, 3);
 
