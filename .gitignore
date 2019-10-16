@@ -1,7 +1,4 @@
 build/
 dist/
 test/
-build-impl.xml
-private/
-project.xml
 
