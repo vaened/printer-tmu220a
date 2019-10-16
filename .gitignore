@@ -1,8 +1,7 @@
 build/
 dist/
 test/
-nbproject/
 build-impl.xml
 private/
 project.xml
-build.xml
+
