@@ -94,7 +94,7 @@ public class TicketTemplate extends Printable {
 
         row = center(" DATOS DE LA CITA ", row);
 
-        if (!Arrays.asList(new String[]{"CARD", "ENDO", "PAE1"}).contains(json.getString("sercod"))) {
+        if (!Arrays.asList(new String[]{"CARD", "ENDO", "PAE1", "PAK0"}).contains(json.getString("sercod"))) {
             writeLine(
                     "Fecha: " + json.getString("date"), // line 1
                     "Hora: " + json.getString("time"), // line 2
