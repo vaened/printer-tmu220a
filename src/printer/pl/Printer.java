@@ -156,5 +156,10 @@ public  abstract class Printer  extends PrinterMatrix{
         printTextWrap(row, row, 1, middle,  line1);
         printTextWrap(row, row, middle + 1, width ,  line2);
         
-    }    
+    }
+    
+   public void writeLine(String line1, String line2, int row, int position) {
+      this.printTextWrap(row, row, 1, position, line1);
+      this.printTextWrap(row, row, position + 1, this.width, line2);
+   }    
 }

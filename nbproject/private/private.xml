@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/G:/web/java/EDHFS/src/pe/org/incn/templates/pharmacy/ConsolidatedTemplate.java</file>
-            <file>file:/G:/web/java/EDHFS/src/pe/gob/incn/modules/AppointmentModule.java</file>
-            <file>file:/G:/web/java/EDHFS/src/pe/org/incn/templates/appointment/TicketTemplate.java</file>
-            <file>file:/G:/web/java/EDHFS/src/pe/gob/incn/modules/PharmacyModule.java</file>
-            <file>file:/G:/web/java/EDHFS/src/pe/gob/incn/modules/CashboxModule.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
