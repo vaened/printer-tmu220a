@@ -18,6 +18,8 @@ public class OrderTemplate extends Printable {
    public Printable draw() {
       JSONObject config = this.json.getJSONObject("config");
       JSONObject responsible = this.json.getJSONObject("responsible");
+      double neto = 0;
+      
       this.row = this.center(config.getString("name").toUpperCase(), this.row);
       String name = this.json.getString("patient");
       String title = "ORDENES DE EXAMENES Y PROCEDIMIENTOS";
@@ -60,11 +62,20 @@ public class OrderTemplate extends Printable {
          String total = String.format("%s", product.getDouble("total"));
          String footer = String.format("p.u.: %s tot: %s", price, total);
          this.writeLine(cantidad, description, this.row, 5);
+         
+         neto +=  product.getDouble("total");
+         
          this.nextLine();
          this.pullRight(footer);
          this.nextLine();
       }
 
+      this.nextLine();
+      this.separator("-");
+      this.nextLine();
+      
+      this.pullRight(String.format("neto %s", neto));
+      
       this.nextLine();
       this.separator("-_");
       this.nextLine();

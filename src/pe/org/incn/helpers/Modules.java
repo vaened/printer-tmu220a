@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import pe.gob.incn.modules.AppointmentModule;
 import pe.gob.incn.modules.CashboxModule;
 import pe.gob.incn.modules.Module;
+import pe.gob.incn.modules.OrderModule;
 import pe.gob.incn.modules.PharmacyModule;
 import pe.gob.incn.modules.TriageModule;
 
@@ -30,6 +31,7 @@ public class Modules {
         this.classes.put("appointment", new AppointmentModule( json ));
         this.classes.put("cashbox", new CashboxModule( json ));
         this.classes.put("triage", new TriageModule( json ));
+        this.classes.put("order", new OrderModule(json));
     }
     
     

@@ -18,7 +18,7 @@ public class OrderModule extends Module {
     protected Printable template() {
 
         switch (this.getTemplateName()) {
-            case "consolidated":
+            case "order":
                 return new OrderTemplate(json);
         }
 
